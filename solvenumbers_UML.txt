@@ -1,0 +1,19 @@
+@startuml
+class solve_numbers {
+    - numbers: List[int]
+    - target: int
+    - operations: List[Callable]
+    - op_symbols: Dict[Callable, str]
+    - closest_result: Optional[Tuple[str, int]]
+    - min_difference: float
+    
+    + __init__(numbers: List[int], target: int)
+    + solve() -> Optional[str]
+    - backtrack(current_value: int, index: int, expression: str) -> Optional[str]
+}
+
+solve_numbers ..> Callable
+solve_numbers ..> List
+solve_numbers ..> Dict
+solve_numbers ..> Tuple
+@enduml
